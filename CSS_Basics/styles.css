@@ -1,0 +1,38 @@
+/* Fonts */
+.bold {
+    font-weight: 700;
+}
+.big-font {
+    font-size: 40px
+}
+.sansserif {
+    font-family: sans-serif;
+}
+
+/* Colours */
+.blue {
+    color: blue
+}
+.red {
+    color: red
+}
+/* Anything both blue and red should be made purple */
+.blue.red {
+    color: purple
+}
+.cyan-back {
+    background-color: cyan
+}
+
+/* Chaining and Grouping */
+.important .sansserif {
+    font-size: 60px
+}
+
+.important p {
+    font-size: 10px
+}
+
+h1, h2 {
+    font-weight: 1;
+}

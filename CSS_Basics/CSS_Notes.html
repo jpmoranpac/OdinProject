@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Notes</title>
+</head>
+<body>
+    <h1>Intro</h1>
+    <p>To apply a style sheet, include the following in the HTML file:</p>
+    <p>"<head><link rel="stylesheet" href="styles.css"></head>"</p>
+    <h1>Selectors</h1>
+    <p>Universal (*): All elements</p>
+    <p>Type: All of a given type</p>
+    <p>Class: (.[classname classname ...]): All elements with the matching "class" attribute</p>
+    <p>ID (#[ID]): All elements with the ID. Use sparingly.</p>
+    <p>Grouping Selectors: comma-separated list</p>
+    <p>Chaining Selectors (.[classname].[classname]) (.[classname]#[ID]): Applies to elements that have both classname "class" attributes</p>
+    <p>Descendant Combinator (.ancestor .child): Elements that have the "child" class and have a parent with the "ancestor" class</p>
+    <h1>Properties</h1>
+    <h2>Common Properties</h2>
+    <p>color: text colour</p>
+    <p>background-color: background colour</p>
+    <p>Colour values: #HEX, rgb(0, 0, 0), hsl(0, 0%, 0%)</p>
+    <a href="https://www.w3schools.com/cssref/css_colors_legal.php">CSS Legal Colour Values</a>
+    <p>font-family: comma-separated list of fonts. Specific ("Times New Roman") or generic ("serif")</p>
+    <p>font-size: e.g. 22px</p>
+    <p>font-weight: e.g. 700 (bold font), between 1-1000</p>
+    <p>image: height and weight: px values or "auto"</p>
+    <h1>Style Playground</h1>
+    <div class="bold">
+        <p class="blue">Blue colour</div>
+            <div class="big-font">
+                <p class="cyan-back">Big, bold, cyan background</p>
+                <p class="red">Big, bold, red colour</p>
+            </div>
+        <p class="sansserif">Bold Sans Serif Font</p>
+    </div>
+    <p class="blue sansserif">Blue Sans Serif</p>
+    <p class="red blue">Red and blue, override to purple</p>
+    <div class="important">
+        <p class="sansserif">Important sans serif gets a bigger font size</p>
+        <p>But other imporant text is smaller</p>
+        <div>And important text without p is normal</div>
+    </div>
+    <p>And all headings have their font un-bolded</p>
+</body>
+</html>
