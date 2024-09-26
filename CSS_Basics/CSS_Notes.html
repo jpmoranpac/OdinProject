@@ -4,12 +4,21 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Notes</title>
+
+    <style>
+        .internal-example {
+            font-style: italic;
+        }
+    </style>
+    <title>CSS Selectors and Properties</title>
 </head>
 <body>
     <h1>Intro</h1>
     <p>To apply a style sheet, include the following in the HTML file:</p>
-    <p>"<head><link rel="stylesheet" href="styles.css"></head>"</p>
+    <p>&lt;head&gt;&lt;link rel="stylesheet" href="styles.css"&gt;&lt;/head&gt;"</p>
+    <p class="internal-example">Alternatively, can include the CSS internal to the HTML. The advantage of separate styles is that is can be shared amongst multiple HTML files. These are included under a &lt;style&gt; tag in the &lt;head&gt; tag.</p>
+    <p style="color:brown">In-line styles are not recommended, but can be used to override existing rules. To use, add a &lt;style&gt; tag to the element.</p>
+    
     <h1>Selectors</h1>
     <p>Universal (*): All elements</p>
     <p>Type: All of a given type</p>
@@ -18,6 +27,7 @@
     <p>Grouping Selectors: comma-separated list</p>
     <p>Chaining Selectors (.[classname].[classname]) (.[classname]#[ID]): Applies to elements that have both classname "class" attributes</p>
     <p>Descendant Combinator (.ancestor .child): Elements that have the "child" class and have a parent with the "ancestor" class</p>
+    
     <h1>Properties</h1>
     <h2>Common Properties</h2>
     <p>color: text colour</p>
@@ -28,6 +38,17 @@
     <p>font-size: e.g. 22px</p>
     <p>font-weight: e.g. 700 (bold font), between 1-1000</p>
     <p>image: height and weight: px values or "auto"</p>
+    
+    <h1>Cascade</h1>
+    <p>When one element has conflicting properties, the following heirarchy is applied:</p>
+    <li>
+        <ol>ID selector</ol>
+        <ol>Class selector</ol>
+        <ol>Type selector</ol>
+    </li>
+    <p>Within a level of priority, the more specific rule takes precedence. The final tiebreaker is the order: the last defined rule wins.</p>
+    <p>Additionally, typography properties are inherited by decendant elements.</p>
+
     <h1>Style Playground</h1>
     <div class="bold">
         <p class="blue">Blue colour</div>
