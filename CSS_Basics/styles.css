@@ -25,14 +25,19 @@
 }
 
 /* Chaining and Grouping */
+/* Decendants of the important tag that are
+    sans serif are larger */
 .important .sansserif {
     font-size: 60px
 }
-
+/* Decendants of the important tag that are
+    in a <p> are made smaller */
 .important p {
     font-size: 10px
 }
 
+/* Both h1 and h2 have their default bolding
+    removed */
 h1, h2 {
     font-weight: 1;
 }
