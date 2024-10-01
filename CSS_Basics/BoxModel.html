@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Box Model Elements</h1>
+    <p>padding: space between box border and content</p>
+    <p>border: space between margin and padding</p>
+    <p>margin: space between border of this box and adjacent boxes. If two margins meet, the smaller is disregarded (margin collapsing).</p>
+    <img src="box-model.png">
+    <h1>Block vs Inline Elements</h1>
+    <p>block: elements separate vertically</p>
+    <p>inline: element appear on the same line (e.g. anchor element). Generally, do not use padding or margin on these elements, as width and height are not respected (interpreted from content length) and padding overlaps other elements. inline-block respects both these properties.</p>
+    <p>inline-block: probably superannuated by flexbox</p>
+    <p>div and span: elements that are used for grouping or hooks. Div is block-level (divides into vertical slices), span is in-line.</p>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Normal_Flow">Description of the "normal flow" between inline and block elements.</a>
+    <h1>Flexbox</h1>
+    <a href="https://flexbox.malven.co/">Flex boxcheat sheet</a>
+    <h2>Terminiology</h2>
+    <p>Flex container: any element with "display: flex" on it.</p>
+    <p>Flex item: any item directly in a flex container.</p>
+    <p>Elements can be both a flex container and flex item.</p>
+    <h2>Properties</h2>
+    <p>The "flex" property (e.g. div { flex: 1 1 0; } or div { flex: 1; }) is shorthand for: </p>
+    <ul>
+        <li>flex-grow: 1</li>
+        <li>flex-shrink: 1</li>
+        <li>flex-basis: 0</li>
+    </ul>
+    <p>flex-grow: the relative size of each item within a group</p>
+    <p>flex-shrink: how much each item will shrink if the parent container isn't large enough. A flex-shrink of "0" will not shrink at all. Usually relevant when setting a specific width for an item, where the item will shrink to no smaller than the specified width.</p>
+    <p>flex-basis: the initial size for the item. Default is 0%, so it ignores any defined "width" property.</p>
+    <p>Practically, the most common flex properties are "flex-grow: 1" to evenly grow divs or "flex-shrink: 0" to prevent shrinking.</p>
+    <p>flex-direction: default is "row", can be set to "column".</p>
+    <p>When sorting by column, the height must be set. The default height for an empty div is 0, so the flex items would collapse without an explicit height set. This is opposed to width, which block-level elements default to the full width of the parent.</p>
+    <h2>Alignment</h2>
+    <p>justify-content: arrange along main axis. Options: flex-start, center, flex-end, space-between, space-around, space-evenly.</p>
+    <p>align-items: arrange along cross axis. Options: flex-start, center, flex-end, stretch, baseline</p>
+    <p>align-self: same as "align-items", but only applies to a single item rather than all children of a container.</p>
+    <p>gap: similar to margin, adds space between items</p>
+    <p>flex-wrap: off by default (enable via flex-wrap: wrap;), allows items to move onto a new row if there is insufficent space on the current row.</p>
+    <h2>Tips</h2>
+    <p>No matter how high flex-shrink is set, the min-width defaults based on the items' content. To override this, set min-width: 0;</p>
+    <h2>Flexbox Examples</h2>
+    <a href="https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/">Combining multiple simple flex box elements:</a>
+    <pre>form {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .name {
+        flex-grow: 1;
+        flex-basis: 160px;
+      }
+      .email {
+        flex-grow: 3;
+        flex-basis: 200px;
+      }
+      button {
+        flex-grow: 1;
+        flex-basis: 80px;
+      }</pre>
+
+</body>
+</html>
