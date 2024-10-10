@@ -1,0 +1,111 @@
+/*div {
+    border-style: solid;
+    padding: 2px;
+} */
+
+* {
+    font-family: 'Roboto', Courier, monospace;
+    margin: 0;
+}
+
+div.header, div.quotes, div.navigation, div.banner, div.content-squares, div.signup, div.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+div.content, div.quote-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.content * {
+    flex-grow: 1;
+}
+
+.content-squares * {
+    margin: 10px;
+    text-align: center;
+}
+
+.rounded-box {
+    border-style: solid;
+    aspect-ratio: 1/1;
+    border-color: #3882F6;
+    border-radius: 20%;
+    padding: 2px;
+}
+
+div.header, div.banner, div.footer {
+    background-color: #1F2937;
+    color: white;
+}
+
+.signup .title {
+    font-weight: bold;
+}
+
+.content .title {
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    flex-grow: 1;
+}
+
+div.banner div.heading {
+    font-size: 48px;
+    font-weight: 900;
+    color: #f9FaF8
+}
+
+div.signup {
+    background-color: #3882F6;
+    color: white;
+    padding: 50px;
+    margin: 50px;
+}
+
+button {
+    color: white;
+    border-radius: 10px;
+    background-color: #3882F6;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.header div, .banner div, .content div, .signup div {
+    flex: 1;
+}
+div.banner, div.quotes, .content, .signup div, div.header, div.banner, div.footer {
+    border-left:60px transparent solid;
+    border-right:60px transparent solid;
+}
+
+.quotes {
+    background-color: #E5E7EB;
+}
+
+div.quote-box {
+    flex-grow: 2;
+}
+
+div.quote-box div.quotation {
+    text-align: center;
+    font-size: 36px;
+    font-style: italic;
+    font-palette: light;
+}
+div.quote-box div.attribution {
+    text-align: right;
+}
+
+div.quote-padding {
+    flex-grow: 1;
+}
+
+.signup button {
+    border-color: white;
+}
