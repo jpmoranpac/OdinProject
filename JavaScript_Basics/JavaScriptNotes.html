@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Notes</title>
+</head>
+<body>
+    <p>For running JavaScript outside of a web browser.</p>
+    <p>nvm: Node Version Manager</p>
+    <p>npm: Node Package Manager</p>
+    <p>Prerequisites:</p>
+    <li>
+        <ul>curl</ul>
+        <ul>Use curl to install nvm: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash</ul>
+    </li>
+    <h1>Document Object Model</h1>
+    <p>JavaScript to modify HTML documents mostly need to be run after the 
+        relevant HTML has been created. This means scripts must be delcared 
+        at the end of the HTML document or loaded with the <code>defer</code> 
+        flag.</p>
+    <p>In JavaScript, can select objects through CSS-style selectors or
+        relational selectors.</p>
+    <pre>const container = document.querySelector("#container");</pre>
+    <pre>const display = container.firstElementChild;</pre>
+    <p>Query selector:</p>
+    <li>
+        <ul><code>element.querySelector(selector)</code>: returns a reference
+            to the first match.</ul>
+        <ul><code>element.querySelectorAll(selectors)</code>: returns a
+            NodeList containing references to all matching selectors.
+            Note that a NodeList isn't an array (can be converted via
+            <code>Array.from()</code>).</ul>
+    </li>
+    <p>With a reference to an element, can access the style via
+        <code>.style.property</code> or <code>.setAttribute</code>.</p>
+    <p>Toggling classes: <code>div.classList.toggle("class")</code></p>
+    <p>Text content: <code>div.textContent = "Text"</code></p>
+    <p>Element creation: <code>const div = document.createElement("div");</code>
+    </p>
+    <p>Append elements: <code>parentNode.appendChild(Node)</code> or 
+        <code>parentNode.insertBefore(Node, referenceNode)</code></p>
+    <p>Remove elements: <code>parentNode.removeChild(child)</code></p>
+    <h1>Events</h1>
+    <p>The preferred way is through adding an Event Listener 
+        to an object: <code>btn.addEventListener("click", alertFunction)</code>. 
+        The event listener class passes an <code>e</code> event argument.</p>
+    <button id="btn">Like so</button>
+    <p>Adding events to a NodeList:</p>
+    <pre>
+        const buttons = document.querySelectorAll("button");
+
+        buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            alert(button.id);
+        });
+        });
+    </pre>
+    <p>Types of events: </p>
+    <li>
+        <ul>click</ul>
+        <ul>dblclick</ul>
+        <ul>keydown</ul>
+        <ul>keyup</ul>
+    </li>
+</body>
+</html>
+
+<script>
+    const alertFunction = function (e) {
+        alert("Event context: " + e);
+    }
+    const button = document.querySelector("#btn");
+    button.addEventListener("click", alertFunction)
+</script>
